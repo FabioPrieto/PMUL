@@ -42,3 +42,4 @@ val notes = listOf(
         color = Color(255, 165, 0) // Naranja
     )
 )
+
