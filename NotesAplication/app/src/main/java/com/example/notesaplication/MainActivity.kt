@@ -1,10 +1,9 @@
 package com.example.notesaplication
-
+/*
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import androidx.annotation.StringRes
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.animateContentSize
 import androidx.compose.animation.core.Spring
@@ -13,7 +12,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -44,8 +42,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.notesaplication.ui.theme.NotesAplicationTheme
-import com.example.notesapplication.data.Note
-import com.example.notesapplication.data.notes
+import com.example.notesaplication.data.Note
+import com.example.notesaplication.data.notes
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -205,5 +203,65 @@ fun NotesAplicationTopAppBar(modifier: Modifier = Modifier){
 fun GreetingPreview() {
     NotesAplicationTheme {
         NotesAplication()
+    }
+}
+ */
+
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
+import androidx.activity.enableEdgeToEdge
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Scaffold
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import com.example.notesaplication.ui.theme.NotesAplicationTheme
+import com.example.notesaplication.data.Note
+import com.example.notesaplication.data.notes
+
+class MainActivity : ComponentActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
+        setContent {
+            NotesAplicationTheme {
+                val navController = rememberNavController() // Crear un NavController
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    // Configurar el NavHost y las rutas
+                    NavHost(
+                        navController = navController,
+                        startDestination = "notesList", // Pantalla inicial
+                        modifier = Modifier.padding(innerPadding)
+                    ) {
+                        composable("notesList") {
+                            NotesAplication(navController) // Pasa el NavController
+                        }
+                        composable("noteDetail/{noteId}") { backStackEntry ->
+                            // Obtener el ID de la nota desde la ruta
+                            val noteId = backStackEntry.arguments?.getString("noteId")?.toInt()
+                            noteId?.let {
+                                NoteDetailScreen(it) // Mostrar los detalles de la nota
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun DefaultPreview() {
+    NotesAplicationTheme {
+        // Usamos una versión sin NavController para previsualización
+        NotesAplicationPreview()
     }
 }

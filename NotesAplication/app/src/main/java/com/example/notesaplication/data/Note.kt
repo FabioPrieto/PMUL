@@ -1,4 +1,4 @@
-package com.example.notesapplication.data
+package com.example.notesaplication.data
 
 import androidx.compose.ui.graphics.Color
 import java.util.Date
