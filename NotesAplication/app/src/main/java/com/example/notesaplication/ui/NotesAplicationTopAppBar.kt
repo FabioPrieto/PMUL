@@ -1,4 +1,4 @@
-package com.example.notesaplication
+package com.example.notesaplication.ui
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Row
@@ -12,7 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.painterResource
-import com.example.notesaplication.ui.theme.NotesAplicationTheme
+import com.example.notesaplication.R
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

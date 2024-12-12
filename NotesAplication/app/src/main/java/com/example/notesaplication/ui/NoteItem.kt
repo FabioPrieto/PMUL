@@ -1,6 +1,6 @@
-package com.example.notesaplication
+package com.example.notesaplication.ui
 
-import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,9 +20,9 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.unit.dp
+import com.example.notesaplication.R
 import com.example.notesaplication.data.Note
 
 @Composable
@@ -33,7 +33,7 @@ fun NoteItem(
 ) {
     var isDisabled by remember { mutableStateOf(false) }
 
-    Card(modifier = modifier,) {
+    Card(modifier = modifier.clickable { onClick() }) {
         Column(
             modifier = Modifier
                 .padding(dimensionResource(R.dimen.padding_small))

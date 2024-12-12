@@ -1,28 +1,20 @@
-package com.example.notesaplication
+package com.example.notesaplication.ui
 
-import android.os.Bundle
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Checkbox
-import androidx.compose.foundation.layout.*
-import androidx.compose.material3.Card
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.remember
 import androidx.navigation.NavHostController
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.ui.unit.dp
-import com.example.notesaplication.data.Note
+import com.example.notesaplication.R
 import com.example.notesaplication.data.notes
-import com.example.notesaplication.ui.theme.NotesAplicationTheme
 
 @Composable
 fun NotesAplication(navController: NavHostController, modifier: Modifier = Modifier) {
