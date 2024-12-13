@@ -235,7 +235,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             NotesAplicationTheme {
                 val navController = rememberNavController() // Crear un NavController
-                /* Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     // Configurar el NavHost y las rutas
                     NavHost(
                         navController = navController,
@@ -263,8 +263,10 @@ class MainActivity : ComponentActivity() {
                         }
                     }
                 }
-                 */
+
+                /*
                 NotesAplication(navController)
+                 */
             }
         }
     }
