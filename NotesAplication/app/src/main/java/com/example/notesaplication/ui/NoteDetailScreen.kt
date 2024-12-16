@@ -85,13 +85,16 @@ fun NoteDetailScreen(
                 Spacer(modifier = Modifier.width(16.dp))
 
                 // Botón para editar
+                /*
                 Button(
+
                     onClick = onEdit,
                     shape = RoundedCornerShape(8.dp),
                     modifier = Modifier.weight(1f)
                 ) {
                     Text("Editar")
                 }
+                 */
 
                 Spacer(modifier = Modifier.width(16.dp))
 

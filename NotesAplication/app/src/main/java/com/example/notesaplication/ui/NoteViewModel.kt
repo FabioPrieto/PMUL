@@ -27,6 +27,4 @@ class NoteViewModel : ViewModel() {
         _notes.remove(note)
     }
 
-    // Si necesitas observar el estado de las notas de manera reactiva
-    //val notesState = snapshotFlow { notes }.collectAsState(initial = emptyList())
 }

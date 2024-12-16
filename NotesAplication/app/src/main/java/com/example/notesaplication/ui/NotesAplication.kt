@@ -22,7 +22,7 @@ fun NotesAplication(navController: NavHostController, modifier: Modifier = Modif
         topBar = { NotesAplicationTopAppBar() },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* Acción para agregar una nueva nota */ },
+                onClick = { navController.navigate("addNote") },
                 modifier = Modifier.padding(16.dp)
             ) {
                 Icon(imageVector = Icons.Default.Add, contentDescription = "Agregar Nota")

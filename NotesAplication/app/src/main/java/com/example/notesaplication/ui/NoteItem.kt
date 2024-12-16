@@ -42,7 +42,13 @@ fun NoteItem(
                 modifier = Modifier
                     .fillMaxWidth()
             ) {
-                Text(text = note.title, style = MaterialTheme.typography.bodyLarge,modifier = Modifier.fillMaxWidth(0.7f))
+
+                Text(
+                    text = note.title,
+                    style = MaterialTheme.typography.bodyLarge,
+                    color = if (isDisabled) MaterialTheme.colorScheme.onSurface.copy(alpha = 0.4f) else MaterialTheme.colorScheme.onSurface,
+                    modifier = Modifier.fillMaxWidth(0.7f)
+                )
                 Checkbox(
                     checked = isDisabled,
                     onCheckedChange = { isChecked ->
