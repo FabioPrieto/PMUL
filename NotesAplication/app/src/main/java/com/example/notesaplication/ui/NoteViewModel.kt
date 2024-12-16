@@ -13,6 +13,7 @@ import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 
 class NoteViewModel : ViewModel() {
+
     // Estado que almacena las notas
     private val _notes = mutableStateListOf(*notes.toTypedArray()) // Copia de las notas iniciales
     val notes: List<Note> get() = _notes

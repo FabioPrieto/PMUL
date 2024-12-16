@@ -6,8 +6,8 @@ import java.util.Date
 data class Note(
     val title: String,
     val description: String,
-    val date: Date, // Usamos java.util.Date
-    val color: Color
+    val date: Date = Date(2024 - 1900, 9, 14, 9, 30), // Usamos java.util.Date
+    val color: Color = Color(0, 0, 255)
 )
 
 val notes = listOf(
