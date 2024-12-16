@@ -224,6 +224,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.notesaplication.data.Note
+import com.example.notesaplication.data.notes
 import com.example.notesaplication.ui.AddNoteDialog
 import com.example.notesaplication.ui.theme.NotesAplicationTheme
 import com.example.notesaplication.ui.NoteDetailScreen
@@ -260,7 +261,7 @@ class MainActivity : ComponentActivity() {
                                     onEdit = { /* Navegar a la pantalla de edición */ },
                                     onDelete = {
                                         navController.popBackStack()
-                                        noteViewModel.deleteNote(
+                                        noteViewModel.removeNote(
 
                                             noteViewModel.notes.find { note -> note.hashCode() == noteId }!!
 
@@ -274,9 +275,13 @@ class MainActivity : ComponentActivity() {
                                 onDismiss = {navController.popBackStack()},
                                 onAdd = { title, description ->
                                     navController.popBackStack()
-
+                                    /*
                                     noteViewModel.addNote(Note(title, description))
+                                    */
+                                    notes += Note(title,description)
+
                                 }
+
                             )
                         }
                     }

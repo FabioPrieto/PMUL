@@ -10,7 +10,7 @@ data class Note(
     val color: Color = Color(0, 0, 255)
 )
 
-val notes = listOf(
+var notes = listOf(
     Note(
         title = "Compra semanal",
         description = "Recordar comprar frutas, leche y huevos",

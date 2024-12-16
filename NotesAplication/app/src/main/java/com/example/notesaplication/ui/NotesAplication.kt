@@ -33,6 +33,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.notesaplication.R
 import com.example.notesaplication.data.Note
 import com.example.notesaplication.data.notes
@@ -94,7 +95,7 @@ fun NoteItem(
     onClick: () -> Unit
 ) {
     var isDisabled by remember { mutableStateOf(false) }
-
+    val noteViewModel: NoteViewModel = viewModel()
     Card(modifier = modifier.clickable { onClick() }) {
         Column(
             modifier = Modifier
@@ -120,7 +121,14 @@ fun NoteItem(
                 )
                 IconButton(
                     onClick = {
-                        notes.filterNot { (note.title == note.title) }
+                        //notes.filterNot { (note.title == note.title) }
+                        /*val index = notes.indexOf(note)
+                        val mutableList = notes.toMutableList()
+                        mutableList.removeAt(index)
+
+                        notes = mutableList
+                         */
+                        //NoteViewModel.removeNote(note)
                     },
                     modifier = Modifier.padding(start = dimensionResource(R.dimen.padding_small))
                 ) {
