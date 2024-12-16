@@ -255,7 +255,9 @@ class MainActivity : ComponentActivity() {
                                     onEdit = { /* Navegar a la pantalla de edición */ },
                                     onDelete = {
                                         noteViewModel.deleteNote(
+
                                             noteViewModel.notes.find { note -> note.hashCode() == noteId }!!
+
                                         )// Volver a la lista de notas
                                     }
                                 ) // Mostrar los detalles de la nota
